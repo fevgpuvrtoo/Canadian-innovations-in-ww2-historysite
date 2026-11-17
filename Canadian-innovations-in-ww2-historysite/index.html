@@ -1,0 +1,974 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northern Ingenuity | Canadian Innovations in World War II</title>
+  <meta name="description" content="Interactive historical simulators and verified archive of Canadian World War II innovations. Cited directly from Encyclopaedia Britannica and The Canadian Encyclopedia.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-slate">
+  <!-- Top Classification Ribbon -->
+  <aside class="classification-ribbon" aria-label="Security Status">
+    <div class="ribbon-container">
+      <span class="ribbon-tag"><span class="pulse-dot"></span> TOP SECRET // HISTORICAL ARCHIVE</span>
+      <span class="ribbon-text">DEPT. OF MUNITIONS & SUPPLY • NATIONAL RESEARCH COUNCIL CANADA • 1939–1945</span>
+      <div class="ribbon-controls">
+        <button id="audio-toggle-btn" class="ribbon-btn" title="Toggle procedural sound effects" aria-label="Toggle radio tone">
+          <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          <span class="btn-label">Radio FX: Off</span>
+        </button>
+        <button id="theme-toggle-btn" class="ribbon-btn" title="Toggle Theme" aria-label="Toggle theme">
+          <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <span class="theme-label">Style: War Room</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-crest">
+          <svg viewBox="0 0 36 36" fill="currentColor">
+            <path d="M18 2L5 7v11c0 9 6.2 15.3 13 17 6.8-1.7 13-8 13-17V7L18 2zm0 4l9.5 3.6v9c0 6.6-4.6 11.8-9.5 13.2-4.9-1.4-9.5-6.6-9.5-13.2v-9L18 6zm-1 4.5l-1.3 4.2-3.8-1.2 2.2 3.6-3.8 2 4.1 1.5-.7 4.2 3.3-2.6.5 4.3 1.5-4.3 3.3 2.6-.7-4.2 4.1-1.5-3.8-2 2.2-3.6-3.8 1.2L17 10.5z" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">NORTHERN INGENUITY</span>
+          <span class="brand-subtitle">Canadian Science & Innovations in World War II</span>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="#innovations" class="nav-link">Innovations Dossier</a>
+        <a href="#gsuit-sim" class="nav-link">G-Suit Flight Lab</a>
+        <a href="#lab-simulator" class="nav-link">Pykrete Stress Lab</a>
+        <a href="#radar-hunter" class="nav-link">Radar & U-Boat Scope</a>
+        <a href="#radio-station" class="nav-link">Walkie-Talkie Radio</a>
+        <a href="#quiz" class="nav-link">Intelligence Exam</a>
+        <a href="#sources" class="nav-link nav-highlight">Verified Sources</a>
+      </nav>
+      <div class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-backdrop-grid"></div>
+    <div class="hero-content">
+      <div class="stamp-badge">VERIFIED HISTORICAL RESEARCH • PEER-REVIEWED CITATIONS</div>
+      <h1 class="hero-title">
+        The Arsenal of Science:<br>
+        <span class="highlight-text">How Canadian Minds Won the War</span>
+      </h1>
+      <p class="hero-lead">
+        In 1939, Canada possessed an army of barely 4,000 men. By 1945, Canadian scientists, engineers, and physicians had invented the <strong>anti-G suit</strong>, engineered the infantry <strong>walkie-talkie</strong>, pioneered <strong>mass-produced penicillin</strong>, synthesized <strong>Allied synthetic rubber</strong>, cracked <strong>high-potency RDX</strong>, and built the secret <strong>1,000-ton Pykrete carrier</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#gsuit-sim" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          Test G-Suit Simulator
+        </a>
+        <a href="#radar-hunter" class="btn btn-secondary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          Operate Radar Console
+        </a>
+        <a href="#sources" class="btn btn-gold">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          Read Britannica Sources
+        </a>
+      </div>
+
+      <!-- Vital Impact Counters -->
+      <div class="stats-banner">
+        <div class="stat-card">
+          <div class="stat-number">18,000+</div>
+          <div class="stat-label">C-58 Walkie-Talkies Built for Allied Frontlines</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">#1</div>
+          <div class="stat-label">World's First Operational Anti-G Suit (Franks Suit)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Allied Synthetic Rubber Reliance (Polymer Corp, Sarnia)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">815,000+</div>
+          <div class="stat-label">Military Vehicles Built (More than Germany, Japan & Italy combined)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE MODULE 1: THE WILBUR FRANKS G-SUIT & FLIGHT SIMULATOR
+       ========================================================================= -->
+  <section id="gsuit-sim" class="content-section gsuit-sim-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">AERO-MEDICAL RESEARCH DIVISION // UNIVERSITY OF TORONTO (1940)</div>
+        <h2 class="section-title">Flight Centrifuge: Dr. Wilbur Franks' Anti-G Suit</h2>
+        <p class="section-desc">
+          Pull sharp high-G maneuvers in a fighter cockpit. Experience how blood drains away from the brain causing deadly <strong>G-LOC (Blackout)</strong>—and how Dr. Franks' liquid-filled anti-G suit saves the pilot's life!
+        </p>
+      </div>
+
+      <div class="sim-module-card">
+        <div class="sim-module-header">
+          <span class="panel-tag">COCKPIT FLIGHT & PHYSIOLOGICAL SIMULATOR</span>
+          <span class="panel-code">TEST-RIG: UOFT-CENTRIFUGE-1940</span>
+        </div>
+
+        <div class="sim-module-body">
+          <!-- Left: Cockpit HUD & Vision Viewport -->
+          <div class="cockpit-view-wrapper" id="cockpit-viewport">
+            <div class="sky-horizon" id="sky-horizon"></div>
+            <div class="crosshair"></div>
+            <div class="blackout-vignette" id="blackout-vignette"></div>
+            
+            <div class="gloc-alert-banner" id="gloc-alert">
+              ⚠️ WARNING: G-LOC BLACKOUT ⚠️<br>
+              <span style="font-size: 0.8rem; font-weight: 400;">PILOT UNCONSCIOUS • BLOOD DRAINAGE CRITICAL</span>
+            </div>
+
+            <div class="hud-overlay">
+              <div>
+                <span>PULL G: </span><strong id="hud-g-val">1.0 G</strong>
+              </div>
+              <div>
+                <span>VISION: </span><strong id="hud-vision-status">100% (CLEAR)</strong>
+              </div>
+              <div>
+                <span>FRANKS SUIT: </span><strong id="hud-suit-status" style="color: #ef4444;">DISENGAGED</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Controls & Live Telemetry -->
+          <div class="sim-controls-panel">
+            <div class="control-block">
+              <label for="g-slider">ACCELERATION FORCE (G-METER SLIDER):</label>
+              <div class="g-slider-wrapper">
+                <input type="range" id="g-slider" min="1.0" max="8.5" step="0.5" value="1.0">
+                <div class="g-gauge-val" id="g-display-val">1.0 G</div>
+              </div>
+            </div>
+
+            <!-- G-Suit Toggle -->
+            <div class="suit-toggle-wrapper">
+              <div class="toggle-switch-label">
+                <span class="switch-title">Dr. Wilbur Franks Liquid-Filled Flying Suit</span>
+                <span class="switch-subtitle">Water bladders apply hydrostatic counter-pressure</span>
+              </div>
+              <label class="toggle-btn">
+                <input type="checkbox" id="gsuit-toggle">
+                <span class="slider-round"></span>
+              </label>
+            </div>
+
+            <!-- Physiological Telemetry -->
+            <div class="telemetry-grid">
+              <div class="telemetry-item">
+                <span>Cerebral Blood Pressure:</span>
+                <strong id="tel-bp">120 mmHg (Normal)</strong>
+              </div>
+              <div class="telemetry-item">
+                <span>Heart Rate:</span>
+                <strong id="tel-hr">75 BPM</strong>
+              </div>
+              <div class="telemetry-item">
+                <span>Water Bladder Pressure:</span>
+                <strong id="tel-bladder">0.0 PSI (Passive)</strong>
+              </div>
+              <div class="telemetry-item">
+                <span>G-LOC Danger:</span>
+                <strong id="tel-danger" style="color: #10b981;">SAFE (Normal Gravity)</strong>
+              </div>
+            </div>
+
+            <div class="physio-status-box" id="physio-status-box">
+              Pilot experiencing normal 1G earth gravity. Retinal arteries receive full oxygenated blood flow.
+            </div>
+
+            <!-- Direct Encyclopedia Citations -->
+            <div class="sim-source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Verified References:</span>
+              <a href="https://www.britannica.com/technology/g-suit" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica: G-suit</a> •
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/wilbur-rounding-franks" target="_blank" rel="noopener noreferrer">The Canadian Encyclopedia: Wilbur Rounding Franks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE MODULE 2: PYKRETE MATERIAL STRESS LAB 2.0 (MULTI-TEST)
+       ========================================================================= -->
+    <section id="lab-simulator" class="content-section pykrete-lab-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">NRC SECRET FIELD TRIAL // PATRICIA LAKE, JASPER NATIONAL PARK, ALBERTA — SPRING 1943</div>
+        <h2 class="section-title">Project Habakkuk: NRC Material Testing Protocol</h2>
+        <p class="section-desc">
+          <strong>CLASSIFIED — FOR AUTHORIZED PERSONNEL ONLY.</strong> You are an NRC field engineer at Patricia Lake, 1943. Winston Churchill has demanded a 2,000,000-ton unsinkable aircraft carrier — codenamed <em>Habakkuk</em> — to close the deadly Mid-Atlantic Gap where German U-boats are sinking Allied convoys beyond the range of any land-based aircraft. Canada's forests and winters make it the perfect place to test Pykrete: a secret composite of ice and spruce wood pulp developed with NRC President C.J. Mackenzie. Run three official wartime test protocols below.
+        </p>
+      </div>
+
+      <div class="lab-grid">
+        <!-- Left: NRC Test Rig -->
+        <div class="lab-panel">
+          <div class="panel-header">
+            <span class="panel-tag">NRC FIELD TEST RIG — PATRICIA LAKE STATION</span>
+            <span class="panel-code">HABAKKUK-PROTO-TEST-43</span>
+          </div>
+
+          <div class="panel-body">
+
+            <!-- Protocol selector -->
+            <div class="composition-box" style="border-left: 3px solid #f59e0b; padding: 12px 14px;">
+              <p style="margin:0 0 8px 0; font-size:0.78rem; color:#f59e0b; letter-spacing:0.08em; font-weight:700;">▶ SELECT WARTIME TEST PROTOCOL:</p>
+              <div class="stress-mode-tabs">
+                <button class="stress-tab-btn active" data-mode="bullet">① Ballistic — .303 Lee-Enfield Rifle</button>
+                <button class="stress-tab-btn" data-mode="torch">② Thermal — Canadian Summer Endurance</button>
+                <button class="stress-tab-btn" data-mode="crush">③ Blast — U-Boat Depth-Charge Shockwave</button>
+              </div>
+              <p id="protocol-desc" style="margin:10px 0 0 0; font-size:0.80rem; color:#94a3b8; line-height:1.6;">
+                <strong style="color:#e2e8f0;">PROTOCOL 1 — Ballistic Resistance (.303 Lee-Enfield):</strong> German U-boats carry 20mm deck guns and boarding parties armed with standard rifles. The hull of HMS Habakkuk must stop small-arms fire without splintering. Fire a standard .303 Lee-Enfield round — the weapon carried by every Commonwealth soldier — at the material sample. Record penetration depth and fracture behaviour for Admiralty files.
+              </p>
+            </div>
+
+            <!-- Material composition slider -->
+            <div class="composition-box">
+              <label>
+                <span>MATERIAL SAMPLE: <strong id="pulp-percent-label">Standard Pykrete (14% Spruce Pulp)</strong></span>
+                <span id="mat-title-label">NRC Formula — 86% Water Ice + 14% Spruce Wood Pulp</span>
+              </label>
+              <input type="range" id="pulp-slider" min="0" max="20" step="1" value="14">
+              <p style="margin:4px 0 0 0; font-size:0.75rem; color:#64748b;">◀ Slide left = Pure Ice (control sample) &nbsp;|&nbsp; Slide right = Increase pulp content ▶</p>
+            </div>
+
+            <!-- Testing Stage -->
+            <div class="simulator-stage" id="sim-stage">
+              <div class="target-block" id="test-target" data-material="pykrete">
+                <div class="block-label" id="target-label">Pykrete Block</div>
+                <div class="crack-layer" id="crack-effect"></div>
+                <div class="bullet-impact" id="impact-effect"></div>
+              </div>
+              <div class="projectile" id="bullet"></div>
+              <div class="flame-effect" id="flame-torch"></div>
+              <div class="press-ram" id="press-ram"></div>
+            </div>
+
+            <div class="sim-controls">
+              <button id="fire-test-btn" class="btn btn-danger">▶ Execute Protocol</button>
+              <button id="reset-test-btn" class="btn btn-secondary">↺ Fresh Sample</button>
+            </div>
+
+            <!-- NRC Field Report readout -->
+            <div class="test-readout">
+              <div class="readout-title">NRC FIELD REPORT — PATRICIA LAKE, 1943:</div>
+              <div class="readout-metrics">
+                <div class="metric-row">
+                  <span>Structural Hardness:</span>
+                  <strong id="metric-compressive">Comparable to low-grade concrete — holds hull shape</strong>
+                </div>
+                <div class="metric-row">
+                  <span>Resistance to Splintering:</span>
+                  <strong id="metric-shatter">High — wood fibres arrest fracture lines</strong>
+                </div>
+                <div class="metric-row">
+                  <span>Summer Melt Behaviour:</span>
+                  <strong id="metric-melt">Slow — pulp jacket insulates the frozen core</strong>
+                </div>
+              </div>
+              <div class="readout-verdict success" id="metric-verdict">
+                Sample loaded on Patricia Lake test rig. Select a wartime protocol above and execute.
+              </div>
+            </div>
+
+            <!-- Source badge -->
+            <div class="sim-source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>Verified References:</span>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/chalmers-jack-mackenzie" target="_blank" rel="noopener noreferrer">The Canadian Encyclopedia: C.J. Mackenzie &amp; Project Habakkuk</a> •
+              <a href="https://www.warmuseum.ca" target="_blank" rel="noopener noreferrer">Canadian War Museum</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: The Secret Patricia Lake Prototype Blueprint -->
+        <div class="lab-panel blueprint-panel">
+          <div class="panel-header">
+            <span class="panel-tag">ARCHIVAL BLUEPRINT: PATRICIA LAKE MODEL</span>
+            <span class="panel-code">DEPT-M&S-DWG-4309</span>
+          </div>
+          <div class="blueprint-content">
+            <div class="blueprint-graphic">
+              <svg viewBox="0 0 500 240" class="blueprint-svg">
+                <defs>
+                  <pattern id="bluegrid2" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1" />
+                  </pattern>
+                </defs>
+                <rect width="500" height="240" fill="#0f2b48" />
+                <rect width="500" height="240" fill="url(#bluegrid2)" />
+                <path d="M0,130 L90,60 L180,110 L270,40 L370,120 L500,70 L500,240 L0,240 Z" fill="#081a2f" opacity="0.4"/>
+                <line x1="0" y1="150" x2="500" y2="150" stroke="#38bdf8" stroke-dasharray="8 4" stroke-width="1.5" />
+                <text x="15" y="145" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10">PATRICIA LAKE SURFACE ELEV. 1,180m</text>
+                <path d="M 60,110 L 440,110 L 400,195 L 100,195 Z" fill="#1e3a5f" stroke="#7dd3fc" stroke-width="2.5" />
+                <polygon points="50,110 250,75 450,110" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2"/>
+                <text x="210" y="70" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="10">WOODEN CAMOUFLAGE ROOF</text>
+                <path d="M 80,130 L 420,130 M 80,150 L 420,150 M 90,170 L 410,170" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6 3" />
+                <rect x="230" y="125" width="40" height="30" fill="#0284c7" stroke="#bae6fd" stroke-width="1"/>
+                <text x="234" y="143" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="8">1-HP</text>
+                <text x="234" y="152" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="7">MOTOR</text>
+                <line x1="60" y1="215" x2="440" y2="215" stroke="#94a3b8" stroke-width="1.5" />
+                <text x="215" y="210" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10">60 FEET (18.3 m)</text>
+                <circle cx="120" cy="140" r="5" fill="#ef4444" />
+                <line x1="120" y1="140" x2="60" y2="40" stroke="#ef4444" stroke-width="1"/>
+                <text x="10" y="35" fill="#fca5a5" font-family="'JetBrains Mono', monospace" font-size="9">PYKRETE WALLS (40ft beam)</text>
+                <circle cx="360" cy="150" r="5" fill="#10b981" />
+                <line x1="360" y1="150" x2="420" y2="40" stroke="#10b981" stroke-width="1"/>
+                <text x="360" y="35" fill="#6ee7b7" font-family="'JetBrains Mono', monospace" font-size="9">CHILLING DUCTS (Cold Air Circulator)</text>
+              </svg>
+            </div>
+
+            <div class="blueprint-legend">
+              <h4>The Jasper Experiment — Field Intelligence Summary</h4>
+              <ul>
+                <li><strong>Spring 1943:</strong> Built in total secrecy by conscientious objectors and NRC engineers in Jasper National Park, Alberta — under NRC President C.J. Mackenzie's direct supervision.</li>
+                <li><strong>Weight:</strong> 1,000 tons. Refrigerated through the Alberta summer using a single <strong>1-horsepower compressor</strong> pumping chilled air through galvanized steel ducts inside the Pykrete hull.</li>
+                <li><strong>Strategic purpose:</strong> To prove the concept for a full 2,000-foot, 2,000,000-ton aircraft carrier that could operate from mid-ocean, beyond the range of Axis land-based aircraft and beyond the reach of torpedoes.</li>
+                <li><strong>Outcome (1943):</strong> The prototype survived the summer intact. However, by late 1943 the introduction of long-range <strong>B-24 Liberator</strong> aircraft and mass-produced escort carriers closed the Atlantic Gap — ending the strategic need for Habakkuk before full construction began.</li>
+                <li><strong>Today:</strong> The sunken wooden framing and refrigeration pipes remain at the bottom of Patricia Lake — an underwater monument to Canadian wartime science, still visited by scuba divers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE MODULE 3: THE BATTLE OF THE ATLANTIC RADAR & U-BOAT HUNTER
+       ========================================================================= -->
+  <section id="radar-hunter" class="content-section radar-hunter-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">ROYAL CANADIAN NAVY & NRC ELECTRONICS // BATTLE OF THE ATLANTIC</div>
+        <h2 class="section-title">U-Boat Hunter: NRC Type 268 Radar Console</h2>
+        <p class="section-desc">
+          Take the bridge of a Canadian Flower-Class corvette escorting Convoy SC-130 in thick fog. Sweep the ocean with <strong>NRC microwave radar</strong>, neutralize incoming acoustic torpedoes with <strong>Canadian CAT gear</strong>, and drop <strong>McGill RDX depth charges</strong>!
+        </p>
+      </div>
+
+      <div class="radar-console-layout">
+        <!-- Interactive 360 Degree Phosphor Radar Scope -->
+        <div class="radar-scope-container">
+          <canvas id="radar-canvas" width="340" height="340"></canvas>
+        </div>
+
+        <!-- Tactical Command Deck -->
+        <div class="radar-tactical-panel">
+          <div class="tactical-status-header">
+            <div>
+              <span class="panel-tag">HMCS SACKVILLE (K181) // CONVOY DEFENSE NET</span>
+              <h3 style="font-family: var(--font-heading); font-size: 1.25rem; color: #ffffff; margin-top: 4px;">Tactical Defense Status</h3>
+            </div>
+            <div class="tactical-alert-badge" id="tactical-alert-badge">RADAR SWEEP ACTIVE</div>
+          </div>
+
+          <!-- Radar Action Controls -->
+          <div class="radar-actions-grid">
+            <button class="radar-action-btn" id="radar-sweep-btn">
+              <span class="action-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Pulse Microwave Radar
+              </span>
+              <span class="action-subtitle">Trigger NRC Type 268 3-cm sweep for surfaced U-boat conning towers</span>
+            </button>
+
+            <button class="radar-action-btn" id="deploy-cat-btn">
+              <span class="action-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                Deploy CAT Acoustic Decoy
+              </span>
+              <span class="action-subtitle">Tow steel noisemakers to divert German T-5 acoustic homing torpedoes</span>
+            </button>
+
+            <button class="radar-action-btn" id="drop-depth-btn">
+              <span class="action-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                Drop McGill RDX Charges
+              </span>
+              <span class="action-subtitle">Launch high-impulse depth charge barrage (1.5x explosive impulse of TNT)</span>
+            </button>
+
+            <button class="radar-action-btn" id="reset-tactical-btn">
+              <span class="action-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                Reset Convoy Sector
+              </span>
+              <span class="action-subtitle">Initialize fresh convoy escort patrol sector</span>
+            </button>
+          </div>
+
+          <!-- Tactical Telemetry Log -->
+          <div class="tactical-log-box" id="tactical-log">
+            [03:14:00] HMCS Sackville patrolling North Atlantic perimeter. Heavy fog. Visual range &lt; 200 yards.<br>
+            [03:14:02] Type 268 microwave radar initialized. Cathode-ray PPI display active.
+          </div>
+
+          <!-- Source verification badge -->
+          <div class="sim-source-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Verified References:</span>
+            <a href="https://www.britannica.com/technology/radar" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica: Radar & PPI</a> •
+            <a href="https://www.thecanadianencyclopedia.ca/en/article/battle-of-the-atlantic" target="_blank" rel="noopener noreferrer">The Canadian Encyclopedia: Battle of the Atlantic</a> •
+            <a href="https://www.britannica.com/science/RDX" target="_blank" rel="noopener noreferrer">Britannica: RDX</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE MODULE 4: DONALD HINGS FIELD RADIO & NOISE-FILTER STATION
+       ========================================================================= -->
+  <section id="radio-station" class="content-section radio-station-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">FIELD TELECOMMUNICATIONS // NATIONAL RESEARCH COUNCIL</div>
+        <h2 class="section-title">The Walkie-Talkie: Donald Hings' C-58 Comms Unit</h2>
+        <p class="section-desc">
+          Frontline radios in 1942 were crippled by deafening artillery noise and electrical static. Tune Donald Hings' C-58 frequency dial and activate his <strong>patented Voice Noise Filter</strong> to hear how Canadian engineering delivered clear speech under shellfire!
+        </p>
+      </div>
+
+      <div class="radio-faceplate">
+        <div class="radio-top-bar">
+          <span>CANADIAN ARMY // WIRELESS SET NO. 58 (C-58)</span>
+          <span>DONALD L. HINGS PATENTS • NRC OTTAWA</span>
+        </div>
+
+        <div class="radio-station-grid">
+          <!-- Frequency Tuner -->
+          <div class="dial-frequency-box">
+            <div class="dial-label">OPERATIONAL FREQUENCY (MHz)</div>
+            <div class="dial-frequency-display" id="freq-display">5.20 MHz</div>
+            <input type="range" id="freq-slider" min="4.0" max="6.5" step="0.1" value="5.2" style="width: 100%; accent-color: var(--accent-gold);">
+            <p style="font-size: 0.75rem; color: #a8a29e; margin-top: 10px;">Tune between 4.0 and 6.5 MHz to locate the Allied 3rd Canadian Division channel (5.80 MHz).</p>
+          </div>
+
+          <!-- Filter & Push to Talk -->
+          <div class="filter-switch-box">
+            <div class="voice-filter-toggle">
+              <div>
+                <strong style="display: block; font-size: 0.95rem; color: #ffffff;">Donald Hings Voice Filter</strong>
+                <span style="font-size: 0.75rem; color: #94a3b8;">Suppresses background artillery blast & tank engine roar</span>
+              </div>
+              <label class="toggle-btn">
+                <input type="checkbox" id="voice-filter-toggle">
+                <span class="slider-round"></span>
+              </label>
+            </div>
+
+            <button id="ptt-btn" class="btn btn-primary" style="justify-content: center; width: 100%; padding: 14px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              Push To Transmit (PTT)
+            </button>
+          </div>
+        </div>
+
+        <!-- Audio Dispatch Readout -->
+        <div class="radio-dispatch-log" id="radio-log" style="margin-top: 20px;">
+          [STATIC CRACKLE] Tune dial to Allied military channel 5.80 MHz to intercept frontline transmission...
+        </div>
+
+        <!-- Source verification badge -->
+        <div class="sim-source-tag" style="margin-top: 16px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Verified References:</span>
+          <a href="https://www.britannica.com/technology/walkie-talkie" target="_blank" rel="noopener noreferrer">Encyclopaedia Britannica: Walkie-talkie</a> •
+          <a href="https://www.thecanadianencyclopedia.ca/en/article/donald-lewes-hings" target="_blank" rel="noopener noreferrer">The Canadian Encyclopedia: Donald Lewes Hings</a> •
+          <a href="https://dlhings.ca" target="_blank" rel="noopener noreferrer">D.L. Hings Foundation Archives</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovations Directory Section -->
+  <section id="innovations" class="content-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">DEPARTMENT OF SCIENTIFIC & INDUSTRIAL RESEARCH</div>
+        <h2 class="section-title">The Innovations Dossier</h2>
+        <p class="section-desc">Search, filter, and inspect the breakthrough military, biomedical, and chemical technologies engineered on Canadian soil, each cross-referenced with verified historical encyclopedias.</p>
+      </div>
+
+      <!-- Search & Filters Toolbar -->
+      <div class="toolbar-wrapper">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="dossier-search" placeholder="Search by invention, inventor, facility, or keyword..." aria-label="Search innovations">
+          <button id="clear-search" class="clear-btn" title="Clear search" style="display: none;">&times;</button>
+        </div>
+
+        <div class="filter-categories" id="filter-buttons" role="tablist">
+          <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All Innovations (<span id="count-all">0</span>)</button>
+          <button class="filter-pill" data-category="aviation" role="tab" aria-selected="false">Aviation & Flight</button>
+          <button class="filter-pill" data-category="comms" role="tab" aria-selected="false">Comms & Radar</button>
+          <button class="filter-pill" data-category="medicine" role="tab" aria-selected="false">Medicine & Trauma</button>
+          <button class="filter-pill" data-category="naval" role="tab" aria-selected="false">Naval & U-Boat</button>
+          <button class="filter-pill" data-category="materials" role="tab" aria-selected="false">Materials & Chem</button>
+          <button class="filter-pill" data-category="blackops" role="tab" aria-selected="false">Secret Projects</button>
+        </div>
+      </div>
+
+      <!-- Innovations Grid -->
+      <div class="innovations-grid" id="innovations-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+      <div id="no-results" class="no-results-state" style="display: none;">
+        <div class="no-results-icon">🔍</div>
+        <h3>No classified files matched your query</h3>
+        <p>Try clearing filters or search terms like "radar", "suit", "rubber", or "Franks".</p>
+        <button id="reset-filter-btn" class="btn btn-secondary">Reset All Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Wartime Timeline -->
+  <section id="timeline" class="content-section timeline-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">CHRONOLOGICAL MASTER LOG: 1939–1945</div>
+        <h2 class="section-title">The Rapid Escalation of Canadian Innovation</h2>
+        <p class="section-desc">Follow the chronological march of discoveries that reshaped military doctrine and modern peacetime life.</p>
+      </div>
+
+      <div class="timeline-stepper">
+        <div class="timeline-line"></div>
+        
+        <div class="timeline-item">
+          <div class="timeline-badge">1939</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">COMMUNICATIONS</span>
+            <h4>Donald Hings Patents the Battlefield Packset</h4>
+            <p>Canadian engineer Donald L. Hings re-engineers his mining field radio for the Canadian military at the NRC in Ottawa, creating the early CMX-1 and future C-58 Walkie-Talkie.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">1940</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">PHYSIOLOGY & FLIGHT</span>
+            <h4>Dr. Wilbur Franks Tests the Anti-G Suit</h4>
+            <p>At the Banting and Best Institute at the University of Toronto, Dr. Franks constructs Canada’s first human centrifuge and rides it himself while wearing the water-filled Franks Flying Suit.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">1941</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">INTELLIGENCE</span>
+            <h4>Camp X & "Hydra" Established on Lake Ontario</h4>
+            <p>Sir William Stephenson opens the ultra-secret paramilitary espionage camp near Whitby/Oshawa with the massive high-speed "Hydra" transmitter linking London, Ottawa, and Washington.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">1942</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">SYNTHETIC POLYMERS</span>
+            <h4>Polymer Corporation Founded in Sarnia</h4>
+            <p>In response to the Fall of Singapore and the loss of natural rubber, Canada establishes Polymer Corp to convert oil refinery gases into synthetic rubber, supplying the entire Allied war machine.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">1943</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">SECRET EXPERIMENTS</span>
+            <h4>Project Habakkuk Secret Testing on Patricia Lake</h4>
+            <p>Under orders from Winston Churchill and the Combined Chiefs of Staff, a 1,000-ton model of an unsinkable Pykrete aircraft carrier is built and refrigerated in Jasper National Park, Alberta.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">1944</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">BIOTECHNOLOGY</span>
+            <h4>Connaught Laboratories Mass-Produces Penicillin for D-Day</h4>
+            <p>Deep-tank fermentation techniques perfected in Toronto deliver millions of units of life-saving penicillin to Normandy beachheads, virtually eradicating gangrene among Allied wounded.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-badge">1945</div>
+          <div class="timeline-card">
+            <span class="timeline-tag">NUCLEAR ENERGY</span>
+            <h4>ZEEP Reactor Achieves Criticality at Chalk River</h4>
+            <p>Canada’s Zero Energy Experimental Pile (ZEEP) becomes the first operational nuclear reactor outside the United States, launching Canada's peaceful CANDU reactor and medical isotope industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Wartime Intelligence Exam -->
+  <section id="quiz" class="content-section quiz-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">WAR OFFICE EVALUATION BOARD</div>
+        <h2 class="section-title">Allied Intelligence & Science Exam</h2>
+        <p class="section-desc">Test your operational knowledge of Canadian wartime innovations and earn your official declassified clearance rank.</p>
+      </div>
+
+      <div class="quiz-container">
+        <div class="quiz-progress-bar">
+          <div class="progress-fill" id="quiz-progress" style="width: 20%;"></div>
+        </div>
+
+        <div class="quiz-status-header">
+          <span id="quiz-step-label">QUESTION 1 OF 5</span>
+          <span id="quiz-score-badge">CURRENT SCORE: 0</span>
+        </div>
+
+        <div class="quiz-card" id="quiz-card">
+          <h3 class="quiz-question" id="quiz-question-text">Loading question...</h3>
+          <div class="quiz-options" id="quiz-options-container"></div>
+          
+          <div class="quiz-explanation" id="quiz-explanation" style="display: none;">
+            <div class="explanation-tag" id="explanation-status">CORRECT</div>
+            <p id="explanation-body"></p>
+            <button id="next-question-btn" class="btn btn-primary">Next Evaluation Question ➔</button>
+          </div>
+        </div>
+
+        <div class="quiz-result-card" id="quiz-results" style="display: none;">
+          <div class="stamp-badge">OFFICIAL EVALUATION COMPLETE</div>
+          <h3 id="result-rank-title">Rank: Director of Wartime Research</h3>
+          <div class="score-circle">
+            <span id="final-score-val">5</span> / 5
+          </div>
+          <p id="result-summary-text" class="result-text">Outstanding! You have mastered the details of Canada's wartime scientific contributions.</p>
+          <button id="restart-quiz-btn" class="btn btn-secondary">Retake Examination</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Sources Section -->
+  <section id="sources" class="content-section sources-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-eyebrow">SCHOLARLY & ARCHIVAL VERIFICATION</div>
+        <h2 class="section-title">Trusted Historical Sources & Articles</h2>
+        <p class="section-desc">
+          Every breakthrough, specification, and military deployment cited on this site is authenticated by peer-reviewed encyclopedias, national museum collections, and government records. Click any link below to read the source articles directly.
+        </p>
+      </div>
+
+      <div class="sources-grid">
+        <!-- Encyclopaedia Britannica Box -->
+        <div class="source-group-card">
+          <div class="sg-header">
+            <div class="sg-badge">PEER-REVIEWED ENCYCLOPEDIA</div>
+            <h3>Encyclopaedia Britannica</h3>
+          </div>
+          <p class="sg-desc">Direct links to authoritative entries in Encyclopaedia Britannica documenting core inventions and key figures:</p>
+          <ul class="citation-links-list">
+            <li>
+              <a href="https://www.britannica.com/technology/g-suit" target="_blank" rel="noopener noreferrer">
+                <span>G-suit (Anti-Gravity Acceleration Garment)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/technology/walkie-talkie" target="_blank" rel="noopener noreferrer">
+                <span>Walkie-Talkie (Battlefield Radio Transceivers)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/biography/William-Stephenson" target="_blank" rel="noopener noreferrer">
+                <span>Sir William Stephenson (Spymaster 'Intrepid' & Camp X)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/science/RDX" target="_blank" rel="noopener noreferrer">
+                <span>RDX / Cyclonite (High Explosive Chemistry)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/science/synthetic-rubber" target="_blank" rel="noopener noreferrer">
+                <span>Synthetic Rubber (Wartime Industrial Polymerization)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/science/penicillin" target="_blank" rel="noopener noreferrer">
+                <span>Penicillin: Antibiotic Discovery, Action, & Scaling</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/technology/radar" target="_blank" rel="noopener noreferrer">
+                <span>Radar: Plan Position Indicator (PPI) & Microwave Waveguides</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.britannica.com/science/blood-transfusion" target="_blank" rel="noopener noreferrer">
+                <span>Blood Transfusion: Plasma Fractionation & Shock Therapy</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- The Canadian Encyclopedia Box -->
+        <div class="source-group-card">
+          <div class="sg-header">
+            <div class="sg-badge national-badge">OFFICIAL CANADIAN HISTORICAL ARCHIVE</div>
+            <h3>The Canadian Encyclopedia</h3>
+          </div>
+          <p class="sg-desc">Canada's definitive national encyclopedia published by Historica Canada:</p>
+          <ul class="citation-links-list">
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/wilbur-rounding-franks" target="_blank" rel="noopener noreferrer">
+                <span>Wilbur Rounding Franks (G-Suit Inventor Biography)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/donald-lewes-hings" target="_blank" rel="noopener noreferrer">
+                <span>Donald Lewes Hings (Walkie-Talkie Pioneer)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/connaught-laboratories" target="_blank" rel="noopener noreferrer">
+                <span>Connaught Laboratories (Wartime Penicillin & Insulin)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/polymer-corporation" target="_blank" rel="noopener noreferrer">
+                <span>Polymer Corporation (Sarnia Synthetic Rubber Program)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/camp-x" target="_blank" rel="noopener noreferrer">
+                <span>Camp X (Special Training School 103 & Hydra Hub)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/battle-of-the-atlantic" target="_blank" rel="noopener noreferrer">
+                <span>Battle of the Atlantic (RCN Escorts, Radar, & CAT Decoys)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/chalmers-jack-mackenzie" target="_blank" rel="noopener noreferrer">
+                <span>Chalmers Jack Mackenzie & Project Habakkuk</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thecanadianencyclopedia.ca/en/article/ram-tank" target="_blank" rel="noopener noreferrer">
+                <span>Ram Tank & Sexton 25-Pounder SP Gun</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Institutional Archives Box -->
+        <div class="source-group-card">
+          <div class="sg-header">
+            <div class="sg-badge museum-badge">MUSEUMS & GOVERNMENT ARCHIVES</div>
+            <h3>National Research & Military Archives</h3>
+          </div>
+          <p class="sg-desc">Primary source documents and scientific exhibits maintained by federal cultural bodies:</p>
+          <ul class="citation-links-list">
+            <li>
+              <a href="https://www.warmuseum.ca" target="_blank" rel="noopener noreferrer">
+                <span>Canadian War Museum (Democracy at War: Science & Tech)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://nrc.canada.ca" target="_blank" rel="noopener noreferrer">
+                <span>National Research Council Canada (Wartime Scientific Milestones)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://heritage.utoronto.ca/exhibits/connaught-laboratories" target="_blank" rel="noopener noreferrer">
+                <span>University of Toronto Heritage: Connaught Penicillin Collection</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://dlhings.ca" target="_blank" rel="noopener noreferrer">
+                <span>Donald L. Hings Foundation (C-58 Walkie-Talkie Patents)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://ingeniumcanada.org" target="_blank" rel="noopener noreferrer">
+                <span>Ingenium Canada: Aviation and Space Museum Collections</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.redcross.ca" target="_blank" rel="noopener noreferrer">
+                <span>Canadian Red Cross Historical Society (WWII Plasma Bank)</span>
+                <svg class="ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="brand-text">
+          <span class="brand-title">NORTHERN INGENUITY</span>
+          <span class="brand-desc">An interactive historical archive celebrating the scientists, researchers, doctors, and engineers of Canada during the Second World War. All records verified with Encyclopaedia Britannica and The Canadian Encyclopedia.</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Key Wartime Institutions</h4>
+        <ul class="footer-links">
+          <li>National Research Council Canada (NRC)</li>
+          <li>Banting and Best Department of Medical Research (U of T)</li>
+          <li>Connaught Medical Research Laboratories</li>
+          <li>Polymer Corporation (Sarnia, Ontario)</li>
+          <li>McGill Department of Chemistry</li>
+          <li>Camp X / Special Training School 103</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Trusted Reference Encyclopedias</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.britannica.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Encyclopaedia Britannica</a></li>
+          <li><a href="https://www.thecanadianencyclopedia.ca" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">The Canadian Encyclopedia</a></li>
+          <li><a href="https://www.warmuseum.ca" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Canadian War Museum (Ottawa)</a></li>
+          <li><a href="https://nrc.canada.ca" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">National Research Council Canada</a></li>
+          <li><a href="https://dlhings.ca" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">D.L. Hings Foundation Archives</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Created for historical education & research • Designed with HTML5, CSS3, and JavaScript • All citations hyperlinked to trusted reference articles.</p>
+    </div>
+  </footer>
+
+  <!-- Detail Modal for Deep Dive -->
+  <div class="modal-overlay" id="detail-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close dossier">&times;</button>
+      <div class="modal-header">
+        <div class="modal-badge-group">
+          <span class="modal-tag" id="modal-field">Aviation</span>
+          <span class="modal-code" id="modal-dossier-code">DOSSIER-NRC-1940</span>
+        </div>
+        <h2 class="modal-title" id="modal-title">Invention Title</h2>
+        <div class="modal-meta" id="modal-meta">
+          <span><strong>Inventors:</strong> Dr. Wilbur Franks</span> •
+          <span><strong>Location:</strong> Toronto, Ontario</span> •
+          <span><strong>Year Introduced:</strong> 1940</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-grid">
+          <!-- The Problem -->
+          <div class="dossier-block problem-block">
+            <div class="block-heading">
+              <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <span>The Wartime Crisis (The Problem)</span>
+            </div>
+            <p id="modal-problem">Description of the life-or-death crisis.</p>
+          </div>
+
+          <!-- The Canadian Breakthrough -->
+          <div class="dossier-block solution-block">
+            <div class="block-heading">
+              <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>The Canadian Ingenuity Solution</span>
+            </div>
+            <p id="modal-solution">How Canadian scientists and engineers solved it.</p>
+          </div>
+        </div>
+
+        <!-- Technical Blueprint / Specs -->
+        <div class="dossier-full-block">
+          <div class="block-heading">
+            <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <span>Technical Specifications & Operational Deployment</span>
+          </div>
+          <div id="modal-specs" class="specs-grid"></div>
+        </div>
+
+        <!-- Battle Impact & Modern Legacy -->
+        <div class="dossier-grid">
+          <div class="dossier-block impact-block">
+            <div class="block-heading">
+              <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <span>WW2 Battlefield Impact</span>
+            </div>
+            <p id="modal-impact">Impact on Allied combat operations.</p>
+          </div>
+
+          <div class="dossier-block legacy-block">
+            <div class="block-heading">
+              <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+              <span>Modern Peacetime Legacy</span>
+            </div>
+            <p id="modal-legacy">How this Canadian invention shapes our world today.</p>
+          </div>
+        </div>
+
+        <!-- Verified Archival Sources & Encyclopedia Articles -->
+        <div class="dossier-full-block sources-block">
+          <div class="block-heading source-heading">
+            <svg class="block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Verified Archival Citations & Encyclopedia Articles</span>
+          </div>
+          <p class="source-intro-text">Read the underlying scholarship and reference articles directly from trusted sources:</p>
+          <div id="modal-sources-list" class="modal-sources-container"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-close-bottom">Return to Archive</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
